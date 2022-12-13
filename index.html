@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FinalProjectDraft (1)</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>FinalProject</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14596,7 +14596,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
             <li><a href="#evaluation">Model Evaluation</a></li>
         </ul>
     </li>
-    <li> <a href="#conclusion"> Conclusion </a>
+    <li> <a href="#conclusions"> Conclusions </a>
+        <ul>
+            <li><a href="#examples">Examples of Using The Linear Model</a></li>
+            <li><a href="#insights">Insights Gained and Closer</a></li>
+        </ul>
+    </li>
 </ol>
 </div>
 </div>
@@ -15252,7 +15257,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>From this, we see a couple of things as we did with release year. First, we see that Animation has the highest average gross with Music/History having the lowest average gross. This means that if a business was going to create a movie, they should look to create an animated movie and if not an animated movie, then a Family movie, then an Action movie, and so on. There is reason to say here that perhaps creating a Family movie is better than an animated one as from it's range above, it has the highest maximum value, but a counter argument to that is that it also has the lowest minimum value. At the end of the day, a business would have to make a call on either going with the low risk, medium reward route with animation or going the medium risk, high reward route with Family but at least with this data analysis, they would know that choosing one of those decisions would net a solid gross revenue. </p><p>Second we see that clearly, each genre's average is not the same. This is evidence that the gross of a movie is dependent on it's genre which makes sense as some genres are more popular than others. But this is just evidence. Now that we see that it's likely, we should create another linear regression with genre as our independent variable and gross as our dependent variable like we did above with release year. We will also be creating a similar null hypothesis stating that there is no relationship between a movie's genre and it's gross, and also looking to reject that null hypothesis. Following that below:</p>
+<p>From this, we see a couple of things as we did with release year. First, we see that Animation has the highest average gross with Music/History having the lowest average gross. This means that if a business was going to create a movie, they should look to create an animated movie and if not an animated movie, then a Family movie, then an Action movie, and so on. The Animation, Family, Action, and Adventure average gross are all above the average value of 0.75e8 so they are all good choice. There is reason to say here that perhaps creating a Family movie is better than an animated one as from it's range above, it has the highest maximum value, but a counter argument to that is that it also has the lowest minimum value. At the end of the day, a business would have to make a call on either going with the low risk, medium reward route with animation or going the medium risk, high reward route with Family but at least with this data analysis, they would know that choosing one of those decisions would net a solid gross revenue. </p><p>Second we see that clearly, each genre's average is not the same. This is evidence that the gross of a movie is dependent on it's genre which makes sense as some genres are more popular than others. But this is just evidence. Now that we see that it's likely, we should create another linear regression with genre as our independent variable and gross as our dependent variable like we did above with release year. We will also be creating a similar null hypothesis stating that there is no relationship between a movie's genre and it's gross, and also looking to reject that null hypothesis. Following that below:</p>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15483,7 +15488,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We again see a very similar plot to the Genre one. Each rating has a very different average gross and range of values which is evidence to believe that there exists a relationship between rating and gross. When it comes to creating a movie, you'd be looking to go for TV-PG, G, or PG-13 with TV-PG having the highest risk with the largest range of values but also having the highest average gross and highest maximum gross. Unrated movies have the lowest average and do not perform well at all. Going back to the relationship between rating and gross, we will create another linear regression with the same null hypothesis, there is no relationship between rating and genre. Creating said linear regression we get:</p>
+<p>We again see a very similar plot to the Genre one. Each rating has a very different average gross and range of values which is evidence to believe that there exists a relationship between rating and gross. When it comes to creating a movie, you'd be looking to go for TV-PG, G, or PG-13 with TV-PG having the highest risk with the largest range of values but also having the highest average gross and highest maximum gross. Picking any of the TV-PG, PG-13, G, PG, or TV-MA ratings is in general considered good as they are all above the 0.75e8 average gross. Unrated movies have the lowest average and do not perform well at all. Going back to the relationship between rating and gross, we will create another linear regression with the same null hypothesis, there is no relationship between rating and genre. Creating said linear regression we get:</p>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15982,7 +15987,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="model_creation"> Model Creation </h2><h4 id="setup">Hypothesis and Model Setup </h4><p>From our exploritory data analysis, we can clearly see that release year, genre, rating, runtime, and budget all affect a movie's budget. Here, we will be creating a linear regression model that encapsulates all of those factors and we will be looking to evaluate it's performance by looking at the residuals of our actual data vs the projected data from our model. We'll get into the latter in a second but first, let's create our model and look at it's summary. The formula for this model will again include year, runtime, genre, rating, and budget as it's independent variables, and it will use gross as it's single dependent variable. We will also be using Ordinary Least Squares for this regression.</p>
+<h2 id="model_creation"> Model Creation </h2><h4 id="setup">Hypothesis and Model Setup </h4><p>From our exploritory data analysis, we can clearly see that release year, genre, rating, runtime, and budget all affect a movie's budget. Here, we will be creating a linear regression model that encapsulates all of those factors and we will be looking to evaluate it's performance by looking at the residuals of our actual data vs the projected data from our model. We'll get into the latter in a second but first, let's create our model and look at it's summary. The formula for this model will again include year, runtime, genre, rating, and budget as it's independent variables, and it will use gross as it's single dependent variable. We will also be using Ordinary Least Squares for this regression. Finally, our full and final null hypothesis will be that no relationship exists between a movie's year, runtime, genre, rating, and budget and it's gross. That is, the gross of a movie does not depend on it's year released, runtime, genre, rating, and budget.</p>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -16178,14 +16183,14 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-
+<p>As we can see in the summary, there are quite a few coefficient values. To break in down in simple terms, the summary show that in order to determine a movie's projected gross based on this linear regression, we must take follow the following equation. (year*the year coefficient) + (runtime*the runtime coefficient) + (budget*the budget coefficient) + the movie's rating's coefficient + the movie's genre's coefficient + the overall intercept coefficient. We'll see a full example of this in the conclusion in order to get an idea of how a business can calculate their full projected gross for a movie they want to make and what the optimal attributes are for a movie. Also, we see that the "Prob (F-statistic)" is 0 which makes sense as it was 0 for the budget as well but it important as we can then reject our null hypothesis and we can say that a movie's release year, runtime, genre, rating, and budget affect it's gross outcome. With this, we can then find what the optimal attributes are for those variables and we can find what makes a movie "good".</p>
 </div>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="evaluation">Model Evaluation </h4><p>In order to evaluate our model, we will be taking a look at a violin plot of the residuals from the model for each year. In terms of violin plots, you can learn more about them <a href="https://chartio.com/learn/charts/violin-plot-complete-guide/">here</a> but the general idea is that violin plots are used when you want to observe the distribution of numeric data across multiple groups. For our situation, we are looking at the distribution of the model residuals for each year. Residuals may be a unfamiliar concept to some readers so to define residuals in terms of a linear regression, residuals are the difference between an observed value (that is the actual gross for a movie) and the value predicted from the regression model (that is the predicted gross based on the movie's attributes). So for our situation, we'll be looking at the difference between the actual gross of a movie and the predicted gross of that movie based on our linear regression for each movie for each year which will create a distribution for each year to be plotted. Then we want to look at the average residual for each year and check to make sure that it's around 0 as that means our linear regression is performing well. If the average residual for a year is around 0, that means that around the same number of points are above our "regression line" as there are below it which means our regression line is right in the middle which is where we want it.</p><p>In order to create our residual plot, we will first have to "wrangle" together our data. First, we will create a new column in our movie data title "model_resid" which will hold each movie's residual from the full linear model we have created. Then, we will create a list that holds the list of residuals for each movie in each specific year.</p>
+<h4 id="evaluation">Model Evaluation </h4><p>In order to evaluate our model, we will be taking a look at a violin plot of the residuals from the model for each year. In terms of violin plots, you can learn more about them <a href="https://chartio.com/learn/charts/violin-plot-complete-guide/">here</a> but the general idea is that violin plots are used when you want to observe the distribution of numeric data across multiple groups. For our situation, we are using a violin plot in order to look at the distribution of the model residuals for each year. Residuals may be a unfamiliar concept to some readers so to define residuals in terms of a linear regression, residuals are the difference between an observed value (that is the actual gross for a movie) and the value predicted from the regression model (that is the predicted gross based on the movie's attributes). So for our situation, we'll be looking at the difference between the actual gross of a movie and the predicted gross of that movie based on our linear regression for each movie for each year which will create a distribution for each year to be plotted. Using each year's distribution, we can see the average residual for each year and check to make sure that it's around 0 as that means our linear regression is performing well. If the average residual for a year is around 0, that means that around the same number of points are above our "regression line" as there are below it which means our regression line is right in the middle which is where we want it.</p><p>In order to create our residual violin plot, we will first have to "wrangle" together our data. First, we will create a new column in our movie data title "model_resid" which will hold each movie's residual from the full linear model we have created. Then, we will create a list that holds the list of residuals for each movie for each specific year. That is, it will be a list of lists of residuals for each year. We'll go about creating this list by going through each entry in our data, checking if it's release year is the current year who's list we are currently creating and if so, add it's residual to the list. Once a year's list is finished, we add it to the overall list an continue. Finally, we create the violin plot using that big list and the corresponding list of unique years. This is all done below:</p>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -16196,16 +16201,22 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[110]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">movie_data</span><span class="p">[</span><span class="s2">&quot;model_resid&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">resid</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Creating the addition model_resid column in our pandas dataframe</span>
+<span class="n">movie_data</span><span class="p">[</span><span class="s2">&quot;model_resid&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">resid</span>
 
+<span class="c1"># Initially creating our list of residual lists and our list of unique years</span>
 <span class="n">model_residuals_per_year</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">model_years</span> <span class="o">=</span> <span class="n">movie_data</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 
+<span class="c1"># Going through each unique year and creating it&#39;s residual list to add it to the overall one</span>
 <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">movie_data</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
     <span class="n">current_year_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1"># Checking if an entry in our database has the year we are looking for</span>
     <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">movie_data</span><span class="p">[</span><span class="o">~</span><span class="n">movie_data</span><span class="p">[</span><span class="s1">&#39;model_resid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="c1"># If it does have the year we want, add it&#39;s residual to that year&#39;s list</span>
         <span class="k">if</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">year</span><span class="p">):</span>
             <span class="n">current_year_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;model_resid&quot;</span><span class="p">])</span>
+    <span class="c1"># Append the year&#39;s final residual list to our overall one</span>
     <span class="n">model_residuals_per_year</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_year_list</span><span class="p">)</span>
 </pre></div>
 
@@ -16219,14 +16230,22 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[111]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[112]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax6</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Setting the size of the upcoming plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax6</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="c1"># Creating our violin plot of residuals per year in order to see each residual distribution</span>
 <span class="n">ax6</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">model_residuals_per_year</span><span class="p">,</span> <span class="n">model_years</span><span class="p">,</span> <span class="n">widths</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">showmeans</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Setting plot labels and the x tick amount</span>
 <span class="n">ax6</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">)</span>
 <span class="n">ax6</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Residual&quot;</span><span class="p">)</span>
 <span class="n">ax6</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Violin Plot of Residuals vs Year For Model&quot;</span><span class="p">)</span>
+
+<span class="c1"># Showing the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -16240,20 +16259,6 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[111]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Text(0.5, 1.0, &#39;Violin Plot of Residuals vs Year For Model&#39;)</pre>
-</div>
-
-</div>
 
 <div class="jp-OutputArea-child">
 
@@ -16278,14 +16283,81 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="conclusion"> Conclusion </h4>
+<p>In the violin plot above, the horizontal line in the middle of each year's "violin" is the average residual for that year. Around that line, you can see the distribution of the residuals for that year as well. The parts of the violin above and below that distribution show the range of the residual values. From this, we can see that the average residuals are all centered around 0 (with a slight exception for 2020 as COVID had some effects on the film industry) which is an indication that our model is performing well. The distributions for each year are also centered around 0 which is another indication that the model is performing well.</p>
 </div>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="conclusions"> Conclusions </h2><p>To finish out the project, we'll want to go over two main things. An example of using the linear model we have created where we try predicting a new and upcoming movie to see its real life use and the insights gained from the project. Let's start with the former.</p>
+</div>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="examples"> Example of Using The Linear Model </h4><p>Suppose you were Marvel Studios and you wanted to get an idea of how your new and upcoming movie "Ant-Man & The Wasp: Quantumania" will perform. As Marvel Studios, you may be concerned about the movie and want to be able to prepare early to move to making a different type of movie next time if the movie does not perform well. Using the linear model above, we can do exactly this. For the attributes of "Ant-Man & The Wasp: Quantumania", the movie will release in 2023, it's main genre is Action, the film is not yet rated but based on your previous ratings, you plan for it to be rated PG-13, its runtime is 135 minutes, and your budget is ~200 million dollars. Using pandas, we can create a new dataframe which only has the Ant-Man data, then using statsmodels, we can use our model to predict it's outcome. It will automatically pull the needed coefficients and do the calculation for us. </p>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[129]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Creating the single entry dataframe</span>
+<span class="n">ant_man</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2023</span><span class="p">],</span> <span class="s1">&#39;genre&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Action&quot;</span><span class="p">],</span> <span class="s1">&#39;rating&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;PG-13&quot;</span><span class="p">],</span> <span class="s1">&#39;runtime&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">135.0</span><span class="p">],</span> <span class="s2">&quot;budget&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">200000000</span><span class="p">]})</span>
 
+<span class="c1"># Predicting it&#39;s gross</span>
+<span class="n">ant_man_gross</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">ant_man</span><span class="p">)</span>
+
+<span class="c1"># Printing out it&#39;s gross</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ant-Man &amp; The Wasp: Quantumania&#39;s project gross is:&quot;</span><span class="p">,</span> <span class="n">ant_man_gross</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Ant-Man &amp; The Wasp: Quantumania&#39;s project gross is: 642715069.7500829
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>So, as we can see, the projected gross is ~643 million dollars. Using this projected gross, Marvel Studios can make further decisions on if they would want to continue creating the type of movies they do and they also have something they could show to shareholders to further grow their business. There's many other uses for both the linear model and the project gross of a movie itself but this is just one example to show how using data science, we can create a real life application for something.</p>
+</div>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="insights"> Insights Gained and Closer </h4><p>Now it's time for the insights. First, we see that a relationship exists between a movie's gross revenue and it's year, genre, rating, runtime, and budget. It could also depend on other factors but we know for sure that it depends on those. Second, we can build a linear model based on those attributes in order to predict a movie's gross revenue. We've seen this with the linear model we created and the example above. Third, in order to create the optimal movie, you'd be looking for it to have be of the Animation, Family, Action, or Adventure genre in that order of priority, you'd want it to be rated TV-PG, PG-13, G, or PG in that order of priority, you'd want the runtime to be somewhere in the 135-155 minute range, and you'd want it to have the highest ideal budget for your business. We see that these values for each of these attribute's create a "good" or "above average" movie when it comes to gross revenue. </p><p>All in all, we have seen that any of these three insights can be useful for real life applications. There's obviously more than can be done with the data but hopefully this tutorial has brought a deeper understanding on how we can take data and manipulate it so that it is useful and insightful. If you are interested in digging deeper into data on movies or creating a more polished linear model, I encourage you to do so!</p>
 </div>
 </div>
 </div>
